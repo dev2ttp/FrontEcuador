@@ -1,0 +1,58 @@
+<main role="main" class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <div class="tittle">
+                <img src="assets/images/ECD/title-monto.png" class="mt-4">
+                <span class="titulo  ml-5 pl-5 mt-n2">Ingrese Monto</span>
+            </div>
+        </div> 
+    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="row text-center ">
+            <div class="col-12 pt-5">
+                <hr>
+            </div>
+            <div class="col-4 br-solid">
+                <a href="#">
+                    <img src="assets/images/ECD/comp-1.png"></a>
+            </div>
+           
+            <div class="form-row col-8">
+                <div class="form-group"> 
+                    <h1 class="green">Identificador</h1>
+                    <input [matKeyboard]="'numeric'" type="text" formControlName="identificador1" class="form-control shadow input-a" [ngClass]="{ 'is-invalid': submitted && f.identificador1.errors }" [(ngModel)]="identificador1"/>
+                    <div *ngIf="submitted && f.identificador1.errors" class="invalid-feedback">
+                        <div *ngIf="f.identificador1.errors.required">El identificador es requerido</div>                        
+                    </div>
+                    <h1 class="green">Confirme Identificador</h1>
+                    <input [matKeyboard]="'numeric'" type="text" formControlName="identificador2" class="form-control shadow input-a" [ngClass]="{ 'is-invalid': submitted && f.identificador2.errors }" [(ngModel)]="identificador2"/>
+                    <div *ngIf="submitted && f.identificador2.errors" class="invalid-feedback">
+                        <div *ngIf="f.identificador2.errors.required">Confirme identificador</div>
+                        <div *ngIf="f.identificador2.errors.mustMatch">Los identificadores deben coincidir</div>
+                    </div>
+                    <h1 class="green">Monto</h1>
+                    <input [matKeyboard]="'numeric'" type="text" formControlName="monto" class="form-control shadow input-a" [ngClass]="{ 'is-invalid': submitted && f.monto.errors }" [(ngModel)]= "monto"/>
+                    <div *ngIf="submitted && f.monto.errors" class="invalid-feedback">
+                        <div *ngIf="f.monto.errors.required">El monto es requerido</div>
+                        <div *ngIf="f.monto.errors.minlength">El monto no debe ser menor a $1.00</div>
+                        <div *ngIf="f.monto.errors.maxlength">El monto no debe ser mayor a $20.00</div>
+                    </div>
+                    <H6>(entre $1.00 y $20.00)</H6>
+                </div>
+            </div>
+            <div class="col-12 pt-5">
+                <hr>
+            </div>
+        </div>
+        <div class="row botonera">
+            <div class="col-6 text-center">
+                <button class="btn-back"  type="reset" (click)="onReset()" routerLink="/recargaTelefono" routerLinkActive="active">VOLVER</button>
+            </div>
+            <div class="col-6 text-center">
+                <button class="btn-next">RECARGAR</button>
+            </div>
+        </div>
+    </form>
+</main>
+<footer>
+</footer>

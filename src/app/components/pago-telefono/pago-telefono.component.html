@@ -1,0 +1,40 @@
+<main role="main" class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <div class="tittle">
+                <img src="assets/images/ECD/title-efectivo.png" class="mt-4">
+                <span class="titulo ml-5 pl-5 mt-n2">Pago Efectivo</span>
+            </div>
+            <span><svg xmlns="http://www.w3.org/2000/svg" width="568" height="52" viewBox="0 0 568 52">
+                <text id="Favor_Insertar_monedas_o_billetes" data-name="Favor Insertar monedas o billetes" transform="translate(0 42)" fill="#707070" font-size="39" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">Favor Insertar monedas o billetes</tspan></text>
+              </svg>
+              </span>
+        </div>
+    </div>
+    <div class="row text-center ">
+        <div class="col-12 pt-5">
+            <hr>
+        </div>
+        <div class="col-6 pt-5 pb-5  br-solid">
+            <h1 class="display-4 font-s grey">Valor a cancelar</h1>
+            <h1 class="display-1 font-s green">${{pago.montoAPagar}}</h1>
+        </div>
+        <div class="col-6  pt-5 pb-5">
+            <h1 class="display-4 font-s grey">Valor ingresado</h1>
+            <h1 class="display-1 font-s green" >${{pago.dineroIngresado}}</h1>
+        </div>
+        <div class="col-12 pt-5">
+            <hr>
+        </div> 
+    </div>
+    <div class="row botonera">
+        <div class="col-6 text-center">
+            <!--button class="btn-back" routerLink="/datosTelefono" routerLinkActive="active">VOLVER</button-->
+        </div>
+        <div class="col-6 text-center">
+            <button class="btn-next" (click)="cancelarOp()">Cancelar</button>
+        </div>
+    </div>
+</main>
+<footer>
+</footer>

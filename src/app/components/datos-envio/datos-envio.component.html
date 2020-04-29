@@ -1,0 +1,43 @@
+<main role="main" class="container-fluid">
+    <div class="row text-center">
+        <div class="col-12">
+            <div class="tittle">
+                <img src="assets/images/ECD/title-envio.png" class="mt-4">
+                <span class="titulo  ml-5 pl-5 mt-n2">Envío de Dinero</span>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="envioDinero" (ngSubmit)="onSubmit()">
+        <div class="row text-center ">
+            <div class="col-12 pt-5">
+                <hr>
+            </div>
+            <div class="col-4 br-solid pt-5 mt-4">
+                <a href="#">
+                    <img src="assets/images/ECD/western.svg"></a>
+            </div>
+            <div class="col-8 mt-5">
+                <div class="form-group">
+                    <H1 class="display-4 font-s green">Ingrese Monto</H1>
+                    <input [matKeyboard]="'numeric'" formControlName="montoEnvio" type="text" class="form-control shadow input-a" [(ngModel)]="montoEnvio"[ngClass]="{ 'is-invalid': submitted && f.montoEnvio.errors }"/>
+                    <div *ngIf="submitted && f.montoEnvio.errors" class="invalid-feedback">
+                        <div *ngIf="f.montoEnvio.errors.required">El monto es requerido</div>                        
+                    </div>
+                </div>
+            </div>
+            <div class=" col-12 pt-5 ">
+                <hr>
+            </div>
+        </div>
+        <div class="row botonera ">
+            <div class="col-6 text-center ">
+                <button class="btn-back " type="reset" (click)="onReset()" routerLink="" routerLinkActive="active">VOLVER</button>
+            </div>
+            <div class="col-6 text-center ">
+                <button class="btn-next">ENVIAR</button>
+            </div>
+        </div>
+    </form>
+</main>
+<footer>
+</footer>
